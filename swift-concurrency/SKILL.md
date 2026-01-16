@@ -1,6 +1,29 @@
 ---
 name: swift-concurrency
-description: 'Expert guidance on Swift Concurrency best practices, patterns, and implementation. Use when developers mention: (1) Swift Concurrency, async/await, actors, or tasks, (2) "use Swift Concurrency" or "modern concurrency patterns", (3) migrating to Swift 6, (4) data races or thread safety issues, (5) refactoring closures to async/await, (6) @MainActor, Sendable, or actor isolation, (7) concurrent code architecture or performance optimization, (8) concurrency-related linter warnings (SwiftLint or similar; e.g. async_without_await, Sendable/actor isolation/MainActor lint).'
+description: >-
+  Expert guidance on Swift Concurrency best practices, actors, tasks,
+  Sendable conformance, and Swift 6 migration strategies.
+source: https://github.com/AvdLee/Swift-Concurrency-Agent-Skill
+globs:
+  - "**/*.swift"
+triggers:
+  - async/await
+  - actors
+  - "@MainActor"
+  - Sendable
+  - Task
+  - TaskGroup
+  - Swift 6
+  - data race
+  - actor isolation
+  - strict concurrency
+  - Swift Concurrency
+  - modern concurrency patterns
+  - migrating to Swift 6
+  - thread safety
+  - refactoring closures to async/await
+  - concurrent code architecture
+  - concurrency-related linter warnings
 ---
 # Swift Concurrency
 
@@ -18,7 +41,27 @@ This skill provides expert guidance on Swift Concurrency, covering modern async/
    - a documented safety invariant
    - a follow-up ticket to remove or migrate it
 6. For migration work, optimize for minimal blast radius (small, reviewable changes) and add verification steps.
-7. Course references are for deeper learning only. Use them sparingly and only when they clearly help answer the developer’s question.
+7. Course references are for deeper learning only. Use them sparingly and only when they clearly help answer the developer's question.
+
+## Recommended Tools for Analysis
+
+When analyzing Swift projects for concurrency issues:
+
+1. **Project Settings Discovery**
+   - Use `Read` on `Package.swift` for SwiftPM settings (tools version, strict concurrency flags, upcoming features)
+   - Use `Grep` for `SWIFT_STRICT_CONCURRENCY` or `SWIFT_DEFAULT_ACTOR_ISOLATION` in `.pbxproj` files
+   - Use `Grep` for `SWIFT_UPCOMING_FEATURE_` to find enabled upcoming features
+
+2. **Code Search Patterns**
+   - `@MainActor` usage: `Grep` for `@MainActor`
+   - Actor definitions: `Grep` for `^actor\s+`
+   - Async functions: `Grep` for `func.*async`
+   - Sendable conformance: `Grep` for `: Sendable` or `@Sendable`
+   - Task usage: `Grep` for `Task\s*\{` or `Task\.detached`
+
+3. **Build Verification**
+   - Use Xcode build tools to verify concurrency changes compile cleanly
+   - Run tests to ensure no regressions in async behavior
 
 ## Project Settings Intake (Evaluate Before Advising)
 
