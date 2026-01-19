@@ -140,25 +140,3 @@ final class ThreadSafeCache: @unchecked Sendable {
     private var storage: [String: Data] = [:]
 }
 ```
-
-## SwiftLint Configuration for Concurrency
-
-Add to `.swiftlint.yml` for concurrency-focused linting:
-
-```yaml
-opt_in_rules:
-  - unowned_variable_capture
-  - class_delegate_protocol
-  - weak_delegate
-
-# Adjust severity as needed
-async_without_await:
-  severity: warning
-
-# Paths to exclude (generated code, etc.)
-excluded:
-  - Generated/
-  - Pods/
-```
-
-
