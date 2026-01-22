@@ -83,7 +83,7 @@ let result = await actor.getData() // Returns non-Sendable type
 
 **"Main actor-isolated property accessed from non-isolated context"**
 ```swift
-// Warning: Main actor-isolated property 'title' can not be referenced from a non-isolated context
+// Warning: Main actor-isolated property 'title' cannot be referenced from a non-isolated context
 func updateTitle() {
     viewModel.title = "New" // viewModel is @MainActor
 }
