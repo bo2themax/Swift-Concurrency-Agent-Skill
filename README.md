@@ -15,6 +15,10 @@ Based on the comprehensive [Swift Concurrency Course](https://www.swiftconcurren
 - Developers debugging data races, isolation errors, or flaky async tests.
 - Anyone wanting performance-minded concurrency patterns (actors, tasks, Sendable, async streams).
 
+## See also my other skills:
+- [SwiftUI Expert](https://github.com/AvdLee/SwiftUI-Agent-Skill)
+- [Core Data Expert](https://github.com/AvdLee/Core-Data-Agent-Skill)
+
 ## How to Use This Skill
 
 ### Option A: Using skills.sh (recommended)
@@ -162,9 +166,6 @@ swift-concurrency/
     ├── glossary.md             # Terms & concepts for Swift Concurrency
     └── linting.md              # Linting rules for strict concurrency
 ```
-
-## Other skills
-- [SwiftUI Expert](https://github.com/AvdLee/SwiftUI-Agent-Skill)
 
 ## Contributing
 
