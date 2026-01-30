@@ -1,4 +1,4 @@
-name: Sync README References
+name: Sync README reference structure
 
 on:
   pull_request:
@@ -23,10 +23,10 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Update README structure
+      - name: Sync README structure
         run: node .github/scripts/sync-readme.js
 
-      - name: Commit and push README
+      - name: Commit README update
         run: |
           if git diff --quiet README.md; then
             echo "README is up to date."
@@ -35,6 +35,7 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git add README.md
-          git commit -m "docs: sync README with reference files [skip ci]"
+          git commit -m "chore: sync README references [skip ci]"
           git push
