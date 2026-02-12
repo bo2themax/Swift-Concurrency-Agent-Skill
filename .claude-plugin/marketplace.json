@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "swift-concurrency-agent-skill",
+  "name": "swift-concurrency-agent-skill-bo2themax",
   "version": "1.0.0",
   "owner": {
     "name": "Antoine van der Lee",
