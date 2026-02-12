@@ -13,7 +13,7 @@
     {
       "name": "swift-concurrency",
       "description": "Expert guidance on Swift Concurrency best practices, patterns, and implementation. Covers async/await, actors, tasks, Sendable conformance, data race prevention, and Swift 6 migration strategies.",
-      "repository": "https://github.com/AvdLee/Swift-Concurrency-Agent-Skill",
+      "repository": "https://github.com/bo2themax/Swift-Concurrency-Agent-Skill/",
       "version": "1.0.0",
       "author": {
         "name": "Antoine van der Lee",
